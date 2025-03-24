@@ -63,9 +63,9 @@ const index = () => {
         title: todo,
         category: category,
       };
-
+      
       axios
-        .post("http://localhost:3000/todos/6583eea7c5bc35503ef0f5ae", todoData)
+        .post("http://192.168.8.159:3000/todos/6583eea7c5bc35503ef0f5ae", todoData)
         .then((response) => {
           console.log(response);
         })
@@ -86,7 +86,7 @@ const index = () => {
   const getUserTodos = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/users/6583eea7c5bc35503ef0f5ae/todos`
+        `http://192.168.8.159:3000/users/6583eea7c5bc35503ef0f5ae/todos`
       );
 
       console.log(response.data.todos);
@@ -111,7 +111,7 @@ const index = () => {
     try {
       setMarked(true);
       const response = await axios.patch(
-        `http://localhost:3000/todos/${todoId}/complete`
+        `http://192.168.8.159:3000/todos/${todoId}/complete`
       );
       console.log(response.data);
     } catch (error) {
